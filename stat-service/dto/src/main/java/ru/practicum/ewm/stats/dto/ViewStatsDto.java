@@ -1,15 +1,15 @@
-package ru.practicum.server.model;
+package ru.practicum.ewm.stats.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Data
-public class ViewStats {
+public class ViewStatsDto {
     private String app;
     private String uri;
     private Long hits;
