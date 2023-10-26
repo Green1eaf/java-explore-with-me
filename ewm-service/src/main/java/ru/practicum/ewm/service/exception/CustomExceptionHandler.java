@@ -25,6 +25,16 @@ public class CustomExceptionHandler {
                 .build();
     }
 
+    @ExceptionHandler({ForbiddenException.class})
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public ResponseError handleForbiddenException(Exception e) {
+        return ResponseError.builder()
+                .status(HttpStatus.FORBIDDEN)
+                .message(e.getMessage())
+                .errorTimestamp(LocalDateTime.now())
+                .build();
+    }
+
     @ExceptionHandler({NotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseError handleNotFoundException(Exception e) {
